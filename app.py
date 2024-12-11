@@ -15,9 +15,8 @@ def fetch_top_stories():
         title = top_story_data.get("title", "None")
         url = top_story_data.get("url", "None")
 
+        print(f"{{'title':{title}, 'link':{url}}}")
         time.sleep(1)  # ここで1秒止まる
-
-        print(f"{{'title':{title} 'link':{url}}}")
 
 
 if __name__ == "__main__":
