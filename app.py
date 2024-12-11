@@ -8,6 +8,8 @@ def fetch_top_stories():
     top_story_ids = response.json()
 
     for top_story_id in top_story_ids[:30]:
+        time.sleep(1)  # ここで1秒止まる
+
         top_story_url = f"https://hacker-news.firebaseio.com/v0/item/{top_story_id}.json?print=pretty"
         top_story_response = requests.get(top_story_url)
 
@@ -16,7 +18,6 @@ def fetch_top_stories():
         url = top_story_data.get("url", "None")
 
         print(f"{{'title':'{title}', 'link':'{url}'}}")
-        time.sleep(1)  # ここで1秒止まる
 
 
 if __name__ == "__main__":
